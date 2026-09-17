@@ -202,6 +202,8 @@ footer a:hover{
 
 .content .note a{
   color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* Code */
@@ -249,7 +251,15 @@ footer a:hover{
   color: var(--muted);
   font-size: 13px;
   font-style: normal;
+}
 
+.content figcaption a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.content figcaption a:hover{
+  opacity: 0.6;
 }
 
 /* Multi-image layouts (opt-in via HTML in Markdown) */
@@ -285,7 +295,7 @@ footer a:hover{
 .content .image-grid{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 10px;
   margin: 40px 0;
 }
 
@@ -295,7 +305,9 @@ footer a:hover{
   height: auto;
   display: block;
 }
-
+.image-grid figcaption{
+  grid-column: 1 / -1;
+}
 /* Responsive */
 @media (max-width: 520px){
   .wrap{
@@ -308,4 +320,8 @@ footer a:hover{
   .post-title{ font-size: 24px; }
 
   .content h2{ font-size: 18px; }
+  
+  .content .image-grid{
+    grid-template-columns: 1fr;
+  }
 }
